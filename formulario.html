@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login And Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script type="text/javascript">
+    function confirmarRegistro()
+    {
+        var respuesta= confirm ("¿Está seguro que desea guardar su registro?")
+
+        if(respuesta== true)
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+</script>
+<body>
+    
+    <form action="" method="POST" id="form"></form>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toogle-btn" onclick="login()">Iniciar Sesión</button>
+                <button type="button" class="toogle-btn"
+                onclick="register()">Register</button>
+            </div>
+            <div class="social-icons">
+                <img src="./img/fb.png">
+                <img src="./img/tw.png">
+                <img src="./img/gp.png">
+            </div>
+            <form id="login" class="input-group">
+                <input type="text" class="input-field" placeholder="User Id" required>
+                <input type="text" class="input-field" placeholder="Contraseña"
+                required>
+                <input type="checkbox" class="chech-box"><span>Remember Password</span>
+                <center>
+                <a href="index.html"><img src="./img/log.png" width=40% height="60%"></a>
+                </center>
+            </form>
+            <form  id="register" class="input-group">
+                <input type="name" class="input-field" placeholder="Nombre"required>
+                <input type="email" class="input-field" placeholder="Email"required>
+                <input type="edad" class="input-field" placeholder="Edad"required>
+                <input type="ruta" class="input-field" placeholder="Deporte"required>
+                <input type="ruta" class="input-field" placeholder="Ciudad"required>
+                <input type="checkbox" class="chech-box"><span>Aceptar los términos y condiciones</span>
+                <button type="submit" class="submit-btn" onclick="return confirmarRegistro() ">Registrar</button>
+                <p class="warnings" id="warnings"></p>
+            </form>
+        </div>
+        
+    </div>
+
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+
+        function register(){
+            x.style.left= "-400px";
+            y.style.left= "50px";
+            z.style.left= "110px";
+        }
+        function login(){
+            x.style.left= "50px";
+            y.style.left= "600px";
+            z.style.left= "0";
+        }
+
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
